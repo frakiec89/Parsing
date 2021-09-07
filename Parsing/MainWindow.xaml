@@ -19,7 +19,7 @@
         </StackPanel>
         <TextBox Grid.Row="1"  Padding="5"  Margin="5" x:Name="content"
                  TextWrapping="Wrap"
-                 Height="200"
+                 Height="500"
                 HorizontalScrollBarVisibility="Disabled"
                 VerticalScrollBarVisibility="Auto"/>
     </Grid>

@@ -107,30 +107,30 @@ namespace Parsing
 
         public string Reg (string content)
         {
-            string rez = string.Empty;
+            string rez = string.Empty; // пустая  строка 
 
-            var contentMassiv = content.Split('\r' , '\n');
+            var contentMassiv = content.Split('\r'); // разбиваю входную  строку на  массив строк 
 
-            string pattern = @"[A-ЯЁ][а-яё]+\s[A-ЯЁ][а-яё]+";
+            string pattern = @"[A-ЯЁ][а-яё]+\s[A-ЯЁ][а-яё]+"; // регулярное выражение
           
-            Regex rgx = new Regex(pattern);
+            Regex rgx = new Regex(pattern); 
             Stopwatch sw;
 
-            List<string> piople = new List<string>();
+            List<string> piople = new List<string>(); // сюда сложу людей кого найду
 
-            foreach (string input in contentMassiv)
+            foreach (string input in contentMassiv) // поиск
             {
                 sw = Stopwatch.StartNew();
                 Match match = rgx.Match(input);
                 sw.Stop();
                 if (match.Success)
                 {
-                    piople.Add(string.Format($"{match.Value} "));
+                    piople.Add(string.Format($"{match.Value} ")); // складываем 
                 }
             }
-            List<string> noDupes = piople.Distinct().OrderBy(x=>x).ToList();
-            noDupes.ForEach(x => rez += $"{x} \n");
-            return rez;
+            List<string> noDupes = piople.Distinct().OrderBy(x=>x).ToList(); // поиск дублирования  и сортировка 
+            noDupes.ForEach(x => rez += $"{x} \n"); // лист  в  строку 
+            return rez; // вернем  строку 
         }
     }
 }
