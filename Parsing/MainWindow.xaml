@@ -1,0 +1,26 @@
+﻿<Window x:Class="Parsing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Parsing"
+        mc:Ignorable="d" Margin="5"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid  ScrollViewer.HorizontalScrollBarVisibility="Visible">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+        </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" >
+            <TextBlock>Укажите путь</TextBlock>
+            <TextBox  Margin="5"></TextBox>
+            <Button Margin="5" x:Name="buttonSelect" Click="buttonSelect_Click">ВЫбрать</Button>
+            <Button x:Name="btREg" Click="btREg_Click" >Найти</Button>
+        </StackPanel>
+        <TextBox Grid.Row="1"  Padding="5"  Margin="5" x:Name="content"
+                 TextWrapping="Wrap"
+                 Height="200"
+                HorizontalScrollBarVisibility="Disabled"
+                VerticalScrollBarVisibility="Auto"/>
+    </Grid>
+</Window>
